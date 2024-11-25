@@ -34,24 +34,6 @@ const HomeScreen = () => {
           Perfil
         </CustomButton>
       </Link>
-
-      {/* Botón para ir a la página de Login */}
-      <CustomButton
-        className="mb-5"
-        color="primary"
-        onPress={() => router.push("/auth/login")}
-      >
-        Login
-      </CustomButton>
-
-      {/* Botón para ir a la página de Registro */}
-      <CustomButton
-        className="mb-5"
-        color="secondary"
-        onPress={() => router.push("/auth/register")}
-      >
-        Registro
-      </CustomButton>
     </SafeAreaView>
   );
 };
