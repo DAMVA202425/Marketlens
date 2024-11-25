@@ -12,6 +12,9 @@ const RootLayout = () => {
     "WorkSans-Black": require("../assets/fonts/WorkSans-Black.ttf"),
     "WorkSans-Light": require("../assets/fonts/WorkSans-Light.ttf"),
     "WorkSans-Medium": require("../assets/fonts/WorkSans-Medium.ttf"),
+    "Kanit-Black": require("../assets/fonts/Kanit-Black.ttf"),
+    "Kanit-Medium": require("../assets/fonts/Kanit-Medium.ttf"),
+    "Kanit-Light": require("../assets/fonts/Kanit-Light.ttf"),
   });
 
   useEffect(() => {
