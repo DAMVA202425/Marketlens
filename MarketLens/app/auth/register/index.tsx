@@ -5,7 +5,7 @@ import { ThemedText } from "@/presentation/theme/components/ThemedText";
 const RegisterScreen = () => {
   return (
     <View>
-      <ThemedText>RegisterScreen</ThemedText>
+      <Text>RegisterScreen</Text>
     </View>
   );
 };
