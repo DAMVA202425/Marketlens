@@ -5,7 +5,7 @@
 ### Rama principal
 Esta rama (`main`) contiene la base inicial del proyecto. Sin embargo, los avances más recientes se están desarrollando en una rama secundaria.
 
-### Rama secundaria: `nombre_de_rama`
+### Rama secundaria: `customAuth`
 Todos los avances actuales y las funcionalidades en desarrollo están en la rama secundaria llamada **`customAuth`**.
 
 
