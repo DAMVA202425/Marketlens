@@ -1,5 +1,6 @@
 // Aqui debe de ir la conexion a nuestra api de bolsa
 
+import { SecureStorageAdapter } from "@/helpers/adapters/secure-storage.adapter";
 import axios from "axios";
 import { Platform } from "react-native";
 
@@ -20,6 +21,16 @@ const productsApi = axios.create({
 });
 
 // TODO: interceptores
+productsApi.interceptors.request.use(async (config) => {
+  // Verificamos si tenemos el token en el secure storage
+  const token = await SecureStorageAdapter.getItem("token");
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
+  return config;
+});
 
 export { productsApi };
 // Aqui debe de ir la conexion a nuestra api de bolsa

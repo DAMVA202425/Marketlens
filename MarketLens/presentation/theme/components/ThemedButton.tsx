@@ -22,6 +22,7 @@ const ThemedButton = ({ children, icon, ...rest }: Props) => {
       //   },
       //   styles.button,
       // ]}
+      {...rest}
     >
       <Text style={{ color: "white" }}>{children}</Text>
       {icon && (
