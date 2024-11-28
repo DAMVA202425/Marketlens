@@ -1,7 +1,35 @@
-import { Text, View } from "react-native";
-import { Stack } from "expo-router";
+import { ActivityIndicator, Text, View } from "react-native";
+import { Redirect, Stack } from "expo-router";
+import { useAuthStore } from "@/presentation/auth/store/useAuthStore";
+import { useEffect } from "react";
 
-const StackLayout = () => {
+const CheckAuthenticationLayout = () => {
+  const { status, checkStatus } = useAuthStore();
+
+  useEffect(() => {
+    checkStatus();
+  }, []);
+
+  if (status === "checking") {
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginBottom: 5,
+        }}
+      >
+        <ActivityIndicator />
+      </View>
+    );
+  }
+
+  if (status === "unauthenticated") {
+    // Guardar la ruta del usuario
+    return <Redirect href="/auth/login" />;
+  }
+
   return (
     <Stack
       screenOptions={{
@@ -42,4 +70,4 @@ const StackLayout = () => {
   );
 };
 
-export default StackLayout;
+export default CheckAuthenticationLayout;
