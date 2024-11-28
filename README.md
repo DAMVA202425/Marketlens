@@ -3,10 +3,11 @@
 ## Información sobre el desarrollo
 
 ### Rama principal
-Esta rama (`main`) contiene la base inicial del proyecto. Sin embargo, los avances más recientes se están desarrollando en una rama secundaria.
+Esta rama (`main`) contiene la base inicial del proyecto. <!--Sin embargo, los avances más recientes se están desarrollando en una rama secundaria.-->
 
 ### Rama secundaria: `customAuth`
-Todos los avances actuales y las funcionalidades en desarrollo están en la rama secundaria llamada **`customAuth`**.
+<!--Todos los avances actuales y las funcionalidades en desarrollo están en la rama secundaria llamada **`customAuth`**.-->
+Tiene las funcionalidades que se desarrollaron al implementar el login y register en esta rama: **`customAuth`**.
 
 
 ## Estilos
