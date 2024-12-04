@@ -7,7 +7,7 @@ Esta rama (`main`) contiene la base inicial del proyecto. Sin embargo, los avanc
 
 ### Rama secundaria: `integracion-alpha-vantage`
 Todos los avances actuales y las funcionalidades en desarrollo están en la rama secundaria llamada **`integracion-alpha-vantage`**.
-Tiene las funcionalidades que se desarrollaron al implementar el login y register en esta rama: **`integracion-alpha-vantage`**.
+Tiene las funcionalidades que se desarrollaron al implementar la integración con Alpha Vantage en esta rama: **`integracion-alpha-vantage`**.
 
 
 ## Estilos
