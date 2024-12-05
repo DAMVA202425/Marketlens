@@ -62,10 +62,23 @@ export const fetchMarketOverview = async (): Promise<MarketOverview> => {
     const latestDate = Object.keys(timeSeries)[0]; // Toma la primera clave, que es la más reciente
     const latestData = timeSeries[latestDate];
 
-    return {
-      DowJones: latestData["1. open"], // Ejemplo: precio de apertura
-      NASDAQ: latestData["2. high"], // Ejemplo: precio más alto del día
+    // Crear el objeto MarketOverview con claves estáticas y dinámicas
+    const marketData: MarketOverview = {
+      DowJones: latestData["1. open"], // Precio de apertura más reciente
+      NASDAQ: latestData["2. high"], // Precio más alto del día más reciente
+      ...Object.keys(timeSeries).reduce((acc, date) => {
+        acc[date] = {
+          "1. open": timeSeries[date]["1. open"],
+          "2. high": timeSeries[date]["2. high"],
+          "3. low": timeSeries[date]["3. low"],
+          "4. close": timeSeries[date]["4. close"],
+          "5. volume": timeSeries[date]["5. volume"],
+        };
+        return acc;
+      }, {} as { [date: string]: { "1. open": string; "2. high": string; "3. low": string; "4. close": string; "5. volume": string } }),
     };
+
+    return marketData;
   } catch (error) {
     console.error("Error al obtener datos del mercado:", error);
     throw error;
