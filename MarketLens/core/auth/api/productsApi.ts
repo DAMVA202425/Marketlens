@@ -1,8 +1,9 @@
-// Aqui debe de ir la conexion a nuestra api de bolsa
-
-import { SecureStorageAdapter } from "@/helpers/adapters/secure-storage.adapter";
 import axios from "axios";
 import { Platform } from "react-native";
+
+import { SecureStorageAdapter } from "@/helpers/adapters/secure-storage.adapter";
+import { CurrencyExchangeRate } from "../interfaces/currency";
+import { MarketOverview } from "../interfaces/market";
 
 // Coneccion mediante envs vars, android
 const STAGE = process.env.EXPO_PUBLIC_STAGE || "dev";
@@ -44,14 +45,27 @@ const alphaVantageApi = axios.create({
 });
 
 // Función para obtener datos de mercado
-export const fetchMarketOverview = async () => {
+export const fetchMarketOverview = async (): Promise<MarketOverview> => {
   try {
     const response = await alphaVantageApi.get("", {
       params: {
-        function: "OVERVIEW", // Ejemplo de endpoint (puede variar según la necesidad)
+        function: "TIME_SERIES_DAILY",
+        symbol: "IBM",
       },
     });
-    return response.data;
+    const data = response.data;
+    if (!data || !data["Time Series (Daily)"]) {
+      throw new Error("Datos del mercado no disponibles");
+    }
+    // Obtener la última fecha disponible
+    const timeSeries = data["Time Series (Daily)"];
+    const latestDate = Object.keys(timeSeries)[0]; // Toma la primera clave, que es la más reciente
+    const latestData = timeSeries[latestDate];
+
+    return {
+      DowJones: latestData["1. open"], // Ejemplo: precio de apertura
+      NASDAQ: latestData["2. high"], // Ejemplo: precio más alto del día
+    };
   } catch (error) {
     console.error("Error al obtener datos del mercado:", error);
     throw error;
@@ -62,7 +76,7 @@ export const fetchMarketOverview = async () => {
 export const fetchCurrencyRates = async (
   fromCurrency: string,
   toCurrency: string
-) => {
+): Promise<CurrencyExchangeRate> => {
   try {
     const response = await alphaVantageApi.get("", {
       params: {
@@ -71,7 +85,14 @@ export const fetchCurrencyRates = async (
         to_currency: toCurrency,
       },
     });
-    return response.data["Realtime Currency Exchange Rate"];
+
+    const data = response.data["Realtime Currency Exchange Rate"];
+
+    if (!data) {
+      throw new Error("Tasas de cambio no disponibles");
+    }
+
+    return data as CurrencyExchangeRate;
   } catch (error) {
     console.error("Error al obtener tasas de cambio:", error);
     throw error;
