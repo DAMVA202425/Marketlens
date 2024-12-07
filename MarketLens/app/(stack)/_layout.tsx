@@ -47,7 +47,7 @@ const CheckAuthenticationLayout = () => {
       ></Stack.Screen>
 
       <Stack.Screen
-        name="products/index"
+        name="news/index"
         options={{
           title: "Noticias",
         }}
