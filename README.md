@@ -9,7 +9,7 @@ Esta rama (`main`) contiene la base inicial del proyecto. Sin embargo, los avanc
 ### Rama secundaria: `integracion-finnhub-alphaVantage-coingecko`
 
 Todos los avances actuales y las funcionalidades en desarrollo están en la rama secundaria llamada **`integracion-finnhub-alphaVantage-coingecko`**.
-Tiene las funcionalidades que se estan desarrollando para implementar la integración con Alpha Vantage, Finnhub y Coingecko en esta rama: **`integracion-finnhub-alphaVantage-coingecko`**.-->
+Tiene las funcionalidades que se estan desarrollando para implementar la integración con Alpha Vantage, Finnhub y Coingecko en esta rama: **`integracion-finnhub-alphaVantage-coingecko`**.
 
 ## Estilos
 
