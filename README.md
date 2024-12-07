@@ -3,12 +3,13 @@
 ## Información sobre el desarrollo
 
 ### Rama principal
+
 Esta rama (`main`) contiene la base inicial del proyecto. Sin embargo, los avances más recientes se están desarrollando en una rama secundaria.
 
-### Rama secundaria: `integracion-alpha-vantage`
-Todos los avances actuales y las funcionalidades en desarrollo están en la rama secundaria llamada **`integracion-alpha-vantage`**.
-Tiene las funcionalidades que se desarrollaron al implementar la integración con Alpha Vantage en esta rama: **`integracion-alpha-vantage`**.-->
+### Rama secundaria: `integracion-finnhub-alphaVantage-coingecko`
 
+Todos los avances actuales y las funcionalidades en desarrollo están en la rama secundaria llamada **`integracion-finnhub-alphaVantage-coingecko`**.
+Tiene las funcionalidades que se estan desarrollando para implementar la integración con Alpha Vantage, Finnhub y Coingecko en esta rama: **`integracion-finnhub-alphaVantage-coingecko`**.-->
 
 ## Estilos
 

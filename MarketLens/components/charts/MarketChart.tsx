@@ -49,9 +49,8 @@ const MarketChart = ({
         chartConfig={chartConfig}
         bezier
         style={{
+          marginVertical: 8,
           borderRadius: 16,
-          marginLeft: "auto",
-          marginRight: "auto",
         }}
       />
     </View>
