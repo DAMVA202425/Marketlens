@@ -15,7 +15,7 @@ interface Props extends TextInputProps {
 
 const ThemedTextInput = ({ icon, ...rest }: Props) => {
   const primaryColor = useThemeColor({}, "primary2");
-  const textColor = useThemeColor({}, "text");
+  const textColor = useThemeColor({ light: "black" }, "text");
 
   const inputRef = useRef<TextInput>(null);
   const [isActive, setIsActive] = useState(false);

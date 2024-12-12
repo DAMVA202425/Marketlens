@@ -1,18 +1,22 @@
-import { useEffect, useState } from "react";
-import { View, Text, SafeAreaView, ActivityIndicator } from "react-native";
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ActivityIndicator,
+  Image,
+} from "react-native";
 import { Link, router } from "expo-router";
-import { LineChart } from "react-native-chart-kit";
-import { Dimensions } from "react-native";
 
 import CustomButton from "@/components/shared/CustomButton";
-import { CurrencyRates } from "@/core/auth/interfaces/currency";
+import { CurrencyRates } from "@/core/endpoints/interfaces/currency";
+import { MarketOverview } from "@/core/endpoints/interfaces/market";
+import MarketChart from "@/components/charts/MarketChart";
 import {
   fetchCurrencyRates,
   fetchMarketOverview,
-} from "@/core/auth/api/productsApi";
-import { MarketOverview } from "@/core/auth/interfaces/market";
-
-const screenWidth = Dimensions.get("window").width;
+} from "@/core/endpoints/api/alphaVantageApi";
+import { fetchBitcoinData } from "@/core/endpoints/api/coingeckoApi";
 
 const HomeScreen = () => {
   const [marketOverview, setMarketOverview] = useState<MarketOverview | null>(
@@ -21,7 +25,12 @@ const HomeScreen = () => {
   const [currencyRates, setCurrencyRates] = useState<CurrencyRates | null>(
     null
   );
+  const [bitcoinData, setBitcoinData] = useState<{ eur: number } | null>(null);
+
   const [loading, setLoading] = useState(true);
+
+  const [marketLabels, setMarketLabels] = useState<string[]>([]); // Etiquetas del grafico
+  const [marketData, setMarketData] = useState<number[]>([]); // Datos del grafico
 
   useEffect(() => {
     const loadData = async () => {
@@ -29,12 +38,28 @@ const HomeScreen = () => {
         const marketData = await fetchMarketOverview();
         const usdToEur = await fetchCurrencyRates("USD", "EUR");
         const usdToGbp = await fetchCurrencyRates("USD", "GBP");
+        const bitcoin = await fetchBitcoinData();
 
         setMarketOverview(marketData);
         setCurrencyRates({
           usdToEur,
           usdToGbp,
         });
+        setBitcoinData(bitcoin);
+
+        // Aqui vamos a procesar los datos para el grafico
+        if (marketData) {
+          const labels = Object.keys(marketData)
+            .filter((key) => key !== "DowJones" && key !== "NASDAQ") // Excluir claves estáticas
+            .slice(0, 5);
+          const data = labels.map((key) => {
+            const dayData = marketData[key]; // Ahora sabemos que key no es una clave estática
+            if (typeof dayData === "string") return 0; // Evitar errores si por alguna razón es una string
+            return parseFloat(dayData["1. open"]); // Valores de apertura
+          });
+          setMarketLabels(labels);
+          setMarketData(data);
+        }
       } catch (error) {
         console.log("Error loading data", error);
       } finally {
@@ -44,7 +69,9 @@ const HomeScreen = () => {
 
     loadData();
   }, []);
-
+  console.log("Labels:", marketLabels); // Fechas
+  console.log("Data:", marketData); // Números
+  console.log("Kripto:", bitcoinData);
   if (loading) {
     return (
       <SafeAreaView className="flex-1 justify-center items-center">
@@ -54,25 +81,16 @@ const HomeScreen = () => {
     );
   }
 
-  const chartData = {
-    labels: ["Lun", "Mar", "Mié", "Jue", "Vie"], // Etiquetas de ejemplo
-    datasets: [
-      {
-        data: [230, 245, 220, 250, 240], // Datos estáticos de ejemplo
-      },
-    ],
-  };
-
   return (
     <SafeAreaView className="flex-1 bg-[#1E002E] p-4">
-      <Text className="text-white text-3xl font-work-black mb-6">
+      <Text className="text-3xl font-work-black mb-6 text-white">
         MarketLens
       </Text>
-      <View className="flex-row justify-center items-center space-x-6 mt-6">
+      <View className="flex-row justify-center items-center space-x-6 mt-6 mb-10">
         <CustomButton
           className="ml-2"
           color="primary"
-          onPress={() => router.push("/products")}
+          onPress={() => router.push("/news")}
         >
           Noticias
         </CustomButton>
@@ -80,54 +98,27 @@ const HomeScreen = () => {
         <CustomButton
           className="ml-2"
           color="primary"
-          onPress={() => router.push("/profile")}
+          onPress={() => router.push("/stocks")}
         >
           Activos
         </CustomButton>
-
-        <CustomButton
-          className="ml-2"
-          color="primary"
-          onPress={() => router.push("/settings")}
-        >
-          Configuracion
-        </CustomButton>
       </View>
-      <Link href="/profile" asChild>
-        <CustomButton variant="text-only" className="mb-10" color="secondary">
-          Perfil
-        </CustomButton>
-      </Link>
 
-      {/* Market Overview */}
+      {/* Market Overwiev */}
       <View className="bg-gray-800 p-4 rounded-lg mb-4">
         <Text className="text-white text-xl font-semibold">
           Market Overview
         </Text>
-        {/* Gráfico Estático */}
-        <LineChart
-          data={chartData}
-          width={screenWidth * 0.9} // Ancho ajustado al 90% del ancho de la pantalla
-          height={220}
-          chartConfig={{
-            backgroundColor: "#1E002E",
-            backgroundGradientFrom: "#1E002E",
-            backgroundGradientTo: "#3E006E",
-            color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          }}
-          style={{
-            marginVertical: 8,
-            borderRadius: 16,
-          }}
-        />
         {marketOverview ? (
           <View>
+            <MarketChart labels={marketLabels} data={marketData} />
             <Text className="text-white mt-2">
               Dow Jones: {marketOverview.DowJones}
             </Text>
             <Text className="text-white mt-2">
               NASDAQ: {marketOverview.NASDAQ}
             </Text>
+            {/* Agrega más datos del mercado aquí */}
           </View>
         ) : (
           <Text className="text-gray-400 mt-2">
@@ -136,25 +127,46 @@ const HomeScreen = () => {
         )}
       </View>
 
-      {/* Currency rates */}
+      {/* Currency rates y Bitcoin*/}
       <View className="bg-gray-800 p-4 rounded-lg mb-4">
-        <Text className="text-white text-xl font-semibold">
-          Tasas de Cambio
-        </Text>
-        {currencyRates ? (
+        <View className="flex-row justify-between mt-2">
           <View>
-            <Text className="text-white mt-2">
-              USD/EUR:{currencyRates.usdToEur["5. Exchange Rate"]}
+            <Text className="text-white text-xl font-semibold">
+              Tasas de Cambio
             </Text>
-            <Text className="text-white mt-2">
-              USD/GBP:{currencyRates.usdToGbp["5. Exchange Rate"]}
-            </Text>
+            {currencyRates ? (
+              <>
+                <Text className="text-white mt-2">
+                  USD/EUR: {currencyRates.usdToEur["5. Exchange Rate"]}
+                </Text>
+                <Text className="text-white mt-2">
+                  USD/GBP: {currencyRates.usdToGbp["5. Exchange Rate"]}
+                </Text>
+              </>
+            ) : (
+              <Text className="text-gray-400 mt-2">
+                No se pudo cargar las tasas de cambio.
+              </Text>
+            )}
           </View>
-        ) : (
-          <Text className="text-gray-400 mt-2">
-            No se pudo cargar las tasas de cambio.
-          </Text>
-        )}
+
+          <View>
+            <Text className="text-white text-xl font-semibold">Bitcoin</Text>
+            {bitcoinData ? (
+              <Text className="text-white mt-2">
+                EUR: ${bitcoinData.eur.toFixed(2)}
+              </Text>
+            ) : (
+              <Text className="text-gray-400 mt-2">
+                No se pudo cargar los datos de Bitcoin.
+              </Text>
+            )}
+          </View>
+          <Image
+            source={require("@/assets/images/bitcoin.jpeg")}
+            style={{ width: 70, height: 70, marginTop: 3 }}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
