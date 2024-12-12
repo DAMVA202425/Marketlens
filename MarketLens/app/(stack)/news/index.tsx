@@ -65,7 +65,7 @@ const NewsScreen = () => {
         <CustomButton
           className="ml-2 mb-5"
           color="primary"
-          onPress={() => router.push("/profile")}
+          onPress={() => router.push("/stocks")}
         >
           Activos
         </CustomButton>

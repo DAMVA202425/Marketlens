@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -86,7 +86,7 @@ const HomeScreen = () => {
       <Text className="text-3xl font-work-black mb-6 text-white">
         MarketLens
       </Text>
-      <View className="flex-row justify-center items-center space-x-6 mt-6">
+      <View className="flex-row justify-center items-center space-x-6 mt-6 mb-10">
         <CustomButton
           className="ml-2"
           color="primary"
@@ -98,24 +98,11 @@ const HomeScreen = () => {
         <CustomButton
           className="ml-2"
           color="primary"
-          onPress={() => router.push("/profile")}
+          onPress={() => router.push("/stocks")}
         >
           Activos
         </CustomButton>
-
-        <CustomButton
-          className="ml-2"
-          color="primary"
-          onPress={() => router.push("/settings")}
-        >
-          Configuracion
-        </CustomButton>
       </View>
-      <Link href="/profile" asChild>
-        <CustomButton variant="text-only" className="mb-10" color="secondary">
-          Perfil
-        </CustomButton>
-      </Link>
 
       {/* Market Overwiev */}
       <View className="bg-gray-800 p-4 rounded-lg mb-4">
