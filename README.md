@@ -103,15 +103,6 @@ npm install react-native-svg
 3. Click en Activos para obtener una lista de Acciones.
 4. En la pestaña de acciones, para obtener la información detallada de cada acción hacer click en la acción deseada.
 
-![WhatsApp Image 2024-12-13 at 6 31 32 PM (2)](https://github.com/user-attachments/assets/5c577667-8802-4f95-8113-59c052205322)
-![WhatsApp Image 2024-12-13 at 6 31 32 PM (1)](https://github.com/user-attachments/assets/8beebfed-b554-4b1f-a5eb-63ea0387641a)
-![WhatsApp Image 2024-12-13 at 6 31 32 PM](https://github.com/user-attachments/assets/f3e0ef95-be7b-4dde-8317-b3ffc7b4d70b)
-![WhatsApp Image 2024-12-13 at 6 31 31 PM (1)](https://github.com/user-attachments/assets/364d6896-3af1-4e75-b04e-530511313204)
-![WhatsApp Image 2024-12-13 at 6 31 31 PM](https://github.com/user-attachments/assets/80068424-7390-4f61-8374-42ffdde747cc)
-![WhatsApp Image 2024-12-13 at 6 31 30 PM (1)](https://github.com/user-attachments/assets/cc860ecf-0c1c-41c4-bd8d-7c20fcbe6e45)
-![WhatsApp Image 2024-12-13 at 6 31 30 PM](https://github.com/user-attachments/assets/a6e2cb71-b9f7-438d-8b51-f252ccd65638)
-
-
 <img src="https://github.com/user-attachments/assets/5c577667-8802-4f95-8113-59c052205322" alt="WhatsApp Image 2024-12-13 at 6 31 32 PM (2)" width="200" />
 <img src="https://github.com/user-attachments/assets/8beebfed-b554-4b1f-a5eb-63ea0387641a" alt="WhatsApp Image 2024-12-13 at 6 31 32 PM (1)" width="200" />
 <img src="https://github.com/user-attachments/assets/f3e0ef95-be7b-4dde-8317-b3ffc7b4d70b" alt="WhatsApp Image 2024-12-13 at 6 31 32 PM" width="200" />
