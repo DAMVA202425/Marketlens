@@ -103,13 +103,22 @@ npm install react-native-svg
 3. Click en Activos para obtener una lista de Acciones.
 4. En la pestaña de acciones, para obtener la información detallada de cada acción hacer click en la acción deseada.
 
-<img src="https://github.com/user-attachments/assets/e9a06a94-48f2-45bb-97eb-10d072480f8e" alt="WhatsApp Image" width="300" />
-<img src="https://github.com/user-attachments/assets/fdaa2419-be4f-43ec-9053-67887622b7d4" alt="WhatsApp Image" width="300" />
-<img src="https://github.com/user-attachments/assets/66d68811-b08b-4ff5-b02b-2887016ddb74" alt="WhatsApp Image" width="300" />
-<img src="https://github.com/user-attachments/assets/579717d1-eb54-4e97-8415-23bfa41630bb" alt="WhatsApp Image" width="300" />
-<img src="https://github.com/user-attachments/assets/6a84b8ec-b0a7-4c5d-a990-a24e8b242ce0" alt="WhatsApp Image" width="300" />
-<img src="https://github.com/user-attachments/assets/9bfffee9-8024-4aea-96dd-fb76e91210b1" alt="WhatsApp Image" width="300" />
-<img src="https://github.com/user-attachments/assets/eb58d0c2-0985-4187-b03b-c87a9c3616be" alt="WhatsApp Image" width="300" />
+![WhatsApp Image 2024-12-13 at 6 31 32 PM (2)](https://github.com/user-attachments/assets/5c577667-8802-4f95-8113-59c052205322)
+![WhatsApp Image 2024-12-13 at 6 31 32 PM (1)](https://github.com/user-attachments/assets/8beebfed-b554-4b1f-a5eb-63ea0387641a)
+![WhatsApp Image 2024-12-13 at 6 31 32 PM](https://github.com/user-attachments/assets/f3e0ef95-be7b-4dde-8317-b3ffc7b4d70b)
+![WhatsApp Image 2024-12-13 at 6 31 31 PM (1)](https://github.com/user-attachments/assets/364d6896-3af1-4e75-b04e-530511313204)
+![WhatsApp Image 2024-12-13 at 6 31 31 PM](https://github.com/user-attachments/assets/80068424-7390-4f61-8374-42ffdde747cc)
+![WhatsApp Image 2024-12-13 at 6 31 30 PM (1)](https://github.com/user-attachments/assets/cc860ecf-0c1c-41c4-bd8d-7c20fcbe6e45)
+![WhatsApp Image 2024-12-13 at 6 31 30 PM](https://github.com/user-attachments/assets/a6e2cb71-b9f7-438d-8b51-f252ccd65638)
+
+
+<img src="https://github.com/user-attachments/assets/5c577667-8802-4f95-8113-59c052205322" alt="WhatsApp Image 2024-12-13 at 6 31 32 PM (2)" width="200" />
+<img src="https://github.com/user-attachments/assets/8beebfed-b554-4b1f-a5eb-63ea0387641a" alt="WhatsApp Image 2024-12-13 at 6 31 32 PM (1)" width="200" />
+<img src="https://github.com/user-attachments/assets/f3e0ef95-be7b-4dde-8317-b3ffc7b4d70b" alt="WhatsApp Image 2024-12-13 at 6 31 32 PM" width="200" />
+<img src="https://github.com/user-attachments/assets/364d6896-3af1-4e75-b04e-530511313204" alt="WhatsApp Image 2024-12-13 at 6 31 31 PM (1)" width="200" />
+<img src="https://github.com/user-attachments/assets/80068424-7390-4f61-8374-42ffdde747cc" alt="WhatsApp Image 2024-12-13 at 6 31 31 PM" width="200" />
+<img src="https://github.com/user-attachments/assets/cc860ecf-0c1c-41c4-bd8d-7c20fcbe6e45" alt="WhatsApp Image 2024-12-13 at 6 31 30 PM (1)" width="200" />
+<img src="https://github.com/user-attachments/assets/a6e2cb71-b9f7-438d-8b51-f252ccd65638" alt="WhatsApp Image 2024-12-13 at 6 31 30 PM" width="200" />
 
 
 
