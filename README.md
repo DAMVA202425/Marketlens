@@ -72,3 +72,13 @@ Dependencia para trabajar con gráficos basados en SVG:
 ```bash
 npm install react-native-svg
 ```
+
+## Installation
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/yourusername/marketlens.git
+   ```
+2. Navegar al directorio del proyecto:
+   cd marketlens
+
+
