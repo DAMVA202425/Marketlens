@@ -1,16 +1,17 @@
 # Marketlens
 
-## Información sobre el desarrollo
+Una aplicación en React Native para la visualización en tiempo real de datos del mercado bursátil, tasas de cambio de monedas, así como de monedas virtuales como Bitcoin, utilizando las APIs de Finnhub, Alpha Vantage y Coingecko.
 
-### Rama principal
+## Índice
+1. [Acerca del proyecto](#about-the-project)
+2. [Introducción](#getting-started)
+3. [Instalación](#installation)
+4. [Uso](#usage)
+5. [Contribución](#contributing)
+6. [Licencia](#license)
+7. [Agradecimientos](#acknowledgements)
 
-Esta rama (`main`) contiene la base inicial del proyecto. Sin embargo, los avances más recientes se están desarrollando en una rama secundaria.
-
-### Rama secundaria: `integracion-finnhub-alphaVantage-coingecko`
-
-Todos los avances actuales y las funcionalidades en desarrollo están en la rama secundaria llamada **`integracion-finnhub-alphaVantage-coingecko`**.
-Tiene las funcionalidades que se estan desarrollando para implementar la integración con Alpha Vantage, Finnhub y Coingecko en esta rama: **`integracion-finnhub-alphaVantage-coingecko`**.
-
+   
 ### Estilos
 
 - Se ha instalado **`NativeWind v4`** que es una libreria que nos permite usar Tailwind CSS
