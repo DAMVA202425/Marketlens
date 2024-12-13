@@ -79,6 +79,9 @@ npm install react-native-svg
    git clone https://github.com/yourusername/marketlens.git
    ```
 2. Navegar al directorio del proyecto:
+   ```bash
    cd marketlens
+   ```
+   
 
 
