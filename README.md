@@ -103,14 +103,13 @@ npm install react-native-svg
 3. Click en Activos para obtener una lista de Acciones.
 4. En la pestaña de acciones, para obtener la información detallada de cada acción hacer click en la acción deseada.
 
-![WhatsApp Image 2024-12-13 at 6 31 32 PM (2)](https://github.com/user-attachments/assets/e9a66a94-48f2-45bb-97eb-10d072480f8e)
-![WhatsApp Image 2024-12-13 at 6 31 32 PM (1)](https://github.com/user-attachments/assets/fdaa2419-be4f-43ec-9653-67887622b7d4)
-![WhatsApp Image 2024-12-13 at 6 31 32 PM](https://github.com/user-attachments/assets/66d68811-b08b-4ff5-b02b-2887016ddb74)
-![WhatsApp Image 2024-12-13 at 6 31 31 PM (1)](https://github.com/user-attachments/assets/579717d1-eb54-4e97-84f5-23bfa4163b0b)
-![WhatsApp Image 2024-12-13 at 6 31 31 PM](https://github.com/user-attachments/assets/6a84b8ec-b0a7-4c54-a990-a24e82b42ce0)
-![WhatsApp Image 2024-12-13 at 6 31 30 PM (1)](https://github.com/user-attachments/assets/9bff1ee9-8024-4aea-96dd-fb76e912101b)
-![WhatsApp Image 2024-12-13 at 6 31 30 PM](https://github.com/user-attachments/assets/eb58d0c2-0985-4187-b03b-c87a9c3616be)
-
+<img src="https://github.com/user-attachments/assets/e9a06a94-48f2-45bb-97eb-10d072480f8e" alt="WhatsApp Image" width="300" />
+<img src="https://github.com/user-attachments/assets/fdaa2419-be4f-43ec-9053-67887622b7d4" alt="WhatsApp Image" width="300" />
+<img src="https://github.com/user-attachments/assets/66d68811-b08b-4ff5-b02b-2887016ddb74" alt="WhatsApp Image" width="300" />
+<img src="https://github.com/user-attachments/assets/579717d1-eb54-4e97-8415-23bfa41630bb" alt="WhatsApp Image" width="300" />
+<img src="https://github.com/user-attachments/assets/6a84b8ec-b0a7-4c5d-a990-a24e8b242ce0" alt="WhatsApp Image" width="300" />
+<img src="https://github.com/user-attachments/assets/9bfffee9-8024-4aea-96dd-fb76e91210b1" alt="WhatsApp Image" width="300" />
+<img src="https://github.com/user-attachments/assets/eb58d0c2-0985-4187-b03b-c87a9c3616be" alt="WhatsApp Image" width="300" />
 
 
 
