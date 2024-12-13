@@ -11,13 +11,6 @@ import { router } from "expo-router";
 import CustomButton from "@/components/shared/CustomButton";
 import { fetchStockData, fetchStocks } from "@/core/endpoints/api/finnhubApi";
 
-// Define la interfaz para las acciones
-interface Stock {
-  description: string;
-  displaySymbol: string;
-  symbol: string;
-}
-
 const StockScreen = () => {
   // Cambia el estado de stocks para usar la interfaz Stock[]
   const [stocks, setStocks] = useState<StockWithPrice[]>([]);
