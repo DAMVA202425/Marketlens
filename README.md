@@ -5,11 +5,8 @@ Una aplicación en React Native para la visualización en tiempo real de datos d
 ## Índice
 1. [Acerca del proyecto](#cerca-del-proyecto)
 2. [Introducción](#introducción)
-3. [Instalación](#installation)
-4. [Uso](#usage)
-5. [Contribución](#contributing)
-6. [Licencia](#license)
-7. [Agradecimientos](#acknowledgements)
+3. [Instalación](#instalación)
+4. [Uso](#uso)
 
 ## Acerca del proyecto
 MarketLens es una aplicación móvil diseñada para que los usuarios puedan estar al correinte de las tendencias del mercado de valores ya que permite:
@@ -22,6 +19,7 @@ MarketLens es una aplicación móvil diseñada para que los usuarios puedan esta
 ### Requisitos previos
 - Node.js (v20.0+)
 - React Native Expo
+- Una clave API de Firebase (regístrese gratis en [Firebase](https://firebase.google.com/)).
 - Una clave API de Alpha Vantage (regístrese gratis en [Alpha Vantage](https://alphavantage.co)).
 - Una clave API de Finnhub (regístrese gratis en [Finnhub](https://finnhub.io)).
 - Una clave API de Coingecko (regístrese gratis en [Coingecko](https://api.coingecko.com)).
@@ -73,7 +71,7 @@ Dependencia para trabajar con gráficos basados en SVG:
 npm install react-native-svg
 ```
 
-## Installation
+## Instalación
 1. Clonar el repositorio:
    ```bash
    git clone https://github.com/yourusername/marketlens.git
@@ -82,6 +80,27 @@ npm install react-native-svg
    ```bash
    cd marketlens
    ```
-   
+3. Installar las dependencias:
+   ```bash
+   npm install
+   ```
+
+4. Configurar las variables de entorno en el fichero .env:
+   ```bash
+   EXPO_PUBLIC_APP_ID=tu_id
+   EXPO_PUBLIC_ALPHA_VANTAGE_API_KEY=tu_api_key
+   EXPO_PUBLIC_FINNHUB_API_KEY=tu_api_key
+   EXPO_PUBLIC_COINGECKO_BASE_URL=https://api.coingecko.com/api/v3
+   ```
+5. Iniciar la aplicación:
+   ```bash
+   npm start
+   ```
+
+## Uso
+1. Abra la aplicación en su dispositivo/emulador.
+2. Click en Noticias para obtener una lista de noticias bursátiles.
+3. Click en Activos para obtener una lista de Acciones.
+4. En la pestaña de acciones, para obtener la información detallada de cada acción hacer click en la acción deseada.
 
 
